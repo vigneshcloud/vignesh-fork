@@ -30,13 +30,7 @@ const validateCampground = (req,res,next) =>{
 router.route('/')
     .get(catchAsync(campgrounds.index))
     .post(isLoggedIn,upload.array('image') ,validateCampground,catchAsync (campgrounds.createCampground));
-    //.post(upload.single('image'),(req,res) =>{
-    //.post(upload.array('image'),(req,res) =>{
-      //  console.log(req.body,req.files)
-        //res.send('Oki')
-
-    //})
-
+   
 router.get('/new' ,isLoggedIn, campgrounds.renderNewForm)
 
 router.route('/:id')

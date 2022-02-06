@@ -1,7 +1,7 @@
 //const campgrounds = require("../../models/campgrounds");
 
   // = '<%-process.env.MAPBOX_TOKEN%>';
-  mapboxgl.accessToken= mapToken;
+  mapboxgl.accessToken= 'pk.eyJ1IjoidnZjbG91ZG1hcGJveCIsImEiOiJja3o3ZXEwOXUwMzd1Mm5wYnIzY2d4MzZ3In0.S7ujF1YLiwnXpaMTp2o7UA';
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10', // stylesheet location

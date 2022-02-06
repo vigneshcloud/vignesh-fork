@@ -1,7 +1,8 @@
 const Campground = require('../models/campgrounds')
 const {cloudinary} = require('../cloudinary')
+const mapBoxToken = 'pk.eyJ1IjoidnZjbG91ZG1hcGJveCIsImEiOiJja3o3ZXEwOXUwMzd1Mm5wYnIzY2d4MzZ3In0.S7ujF1YLiwnXpaMTp2o7UA';
+
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding')
-const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder =mbxGeocoding({accessToken: mapBoxToken}) ;
 
 
@@ -70,12 +71,6 @@ module.exports.updateCampground = async (req, res) => {
     campground.images.push(...imgs);
 
     await campground.save();
-    //if(req.body.deleteImages){
-      //  for(let filename of req.body.deleteImages){
-        //    await cloudinary.uploader.destroy(filename);
-        //}
-        
-    //pk.eyJ1IjoidnZjbG91ZG1hcGJveCIsImEiOiJja3o3ZXEwOXUwMzd1Mm5wYnIzY2d4MzZ3In0.S7ujF1YLiwnXpaMTp2o7UA
     
     if(req.body.deleteImages){
         for(let filename of req.body.deleteImages){
