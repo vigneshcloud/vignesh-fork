@@ -1,5 +1,6 @@
 <% layout('layouts/boilerplate')%>
-<div id="cluster-map" style="width:100%;height: 500px"></div>
+<link rel="stylesheet" href="/stylesheets/index.css">
+<!-- <div id="cluster-map" style="width:100%;height: 500px"></div> -->
 
     <h1>One Piece Characters</h1>
     <div>
@@ -10,13 +11,13 @@
     <div class="row">
         <div class="col-md-4">
             <% if(campground.images.length){%>
-                <img class="img-fluid" alt="" src="<%= campground.images[0].url %>">
+                <img  style="width: 40% " class="img-fluid" alt="" src="<%= campground.images[0].url %>">
                 <%} else{%>
                     <img class="img-fluid" alt="" src="C:\Users\cloud\Pictures">
                     <% } %>
         
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
             <div class="card-body">
                 <h5 class="card-title"><%= campground.title %></h5>
                 <p class="card-text"><%= campground.location %></p>
@@ -36,4 +37,4 @@
               
               </script>
 
-            <script src="/javascripts/clusterMap.js"></script>
+            <!-- <script src="/javascripts/clusterMap.js"></script> -->
